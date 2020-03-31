@@ -13,6 +13,14 @@ So, the function should return 26 because sum of minimums is as 1 + 5 + 20 = 26
 Note: You will be always given non-empty array containing Positive values.
 */
 
-function sumOfMinimums(arr) {
-  // your code here
+const sumOfMinimums = (arr) => {
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i].sort((a, b) => a - b);
+  }
+  for(let h = 0; h < arr.length; h++) {
+    sum += arr[h][0];
+  }
+
+  return sum;
 }
